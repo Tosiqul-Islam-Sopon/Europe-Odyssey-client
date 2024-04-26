@@ -74,7 +74,7 @@ const Navbar = () => {
                     </>
                         :
                         <>
-                            <Link to="/login"><a className="btn bg-[#cf827c] text-white hover:text-black">Register</a></Link>
+                            <Link to="/register"><a className="btn bg-[#cf827c] text-white hover:text-black">Register</a></Link>
                             <Link to="/login"><a className="btn bg-[#cf827c] text-white hover:text-black">Login</a></Link>
                         </>
                 }
