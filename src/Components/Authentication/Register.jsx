@@ -4,9 +4,10 @@ import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import DocumentTitle from "../../Title";
 
 const Register = () => {
-
+    DocumentTitle("Registration");
     const [showPassword, setShowPassword] = useState(false);
 
     const { createUser, setNameAndPhoto, googleSignIn, githubSignIn } = useContext(AuthContext);
