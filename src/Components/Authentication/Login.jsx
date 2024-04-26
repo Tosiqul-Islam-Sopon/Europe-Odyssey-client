@@ -9,7 +9,7 @@ const Login = () => {
 
     const [showPassword, setShowPassword] = useState(false);
 
-    const {logIn} = useContext(AuthContext);
+    const { logIn, googleSignIn } = useContext(AuthContext);
 
     const handleLogin = e => {
         e.preventDefault();
@@ -22,7 +22,7 @@ const Login = () => {
                     title: "Welcome to EuropeOdyssey",
                     text: "Login Successfully",
                     icon: "success"
-                  });
+                });
                 console.log(result);
                 // navigate(location?.state ? location.state : "/");
             })
@@ -31,8 +31,28 @@ const Login = () => {
                     title: "OPPS!!!",
                     text: "Something went wrong",
                     icon: "error"
-                  });
+                });
                 console.error(error);
+            })
+    }
+
+    const handleGoogleLogin = () => {
+        googleSignIn()
+            .then(res => {
+                console.log(res);
+                Swal.fire({
+                    title: "Welcome to EuropeOdyssey",
+                    text: "Login Successfully",
+                    icon: "success"
+                  });
+            })
+            .catch(error => {
+                console.error(error);
+                Swal.fire({
+                    title: "OPPS!!!",
+                    text: "Something went wrong",
+                    icon: "error"
+                });
             })
     }
 
@@ -73,7 +93,7 @@ const Login = () => {
                     <div className="flex flex-col space-y-3 w-full justify-center items-center">
                         <p>Or Continue with</p>
                         <div className="space-x-6">
-                            <button className="text-5xl"><FcGoogle /></button>
+                            <button onClick={handleGoogleLogin} className="text-5xl"><FcGoogle /></button>
                             <button className="text-5xl"><FaGithub /></button>
                         </div>
                         {/* <Link to="/registration"><p>Or<span className="underline text-green-400 ml-4">Register</span></p></Link> */}

@@ -9,7 +9,7 @@ const Register = () => {
 
     const [showPassword, setShowPassword] = useState(false);
 
-    const { createUser, setNameAndPhoto } = useContext(AuthContext);
+    const { createUser, setNameAndPhoto, googleSignIn } = useContext(AuthContext);
 
     const validatePassword = (password) => {
         if (password.length < 6) {
@@ -45,7 +45,7 @@ const Register = () => {
                                 title: "Welcome to EuropeOdyssey",
                                 text: "Registration Successful",
                                 icon: "success"
-                              });
+                            });
                         })
                         .catch(error => {
                             console.log(error);
@@ -57,10 +57,34 @@ const Register = () => {
                     // swal("Error!", "Uppsss! Somethig went wrong", "error");
                 })
         }
-        else{
-            console.log("Please Provied a valid password");
+        else {
+            Swal.fire({
+                title: "Sorry!",
+                text: "Please provide a password with at least 6 characters with one small letter and one capital letter",
+                icon: "error"
+            });
         }
 
+    }
+
+    const handleGoogleLogin = () => {
+        googleSignIn()
+            .then(res => {
+                console.log(res);
+                Swal.fire({
+                    title: "Welcome to EuropeOdyssey",
+                    text: "Login Successfully",
+                    icon: "success"
+                  });
+            })
+            .catch(error => {
+                console.error(error);
+                Swal.fire({
+                    title: "OPPS!!!",
+                    text: "Something went wrong",
+                    icon: "error"
+                });
+            })
     }
     return (
         <div className="w-full  bg-base-200 mx-auto">
@@ -111,7 +135,7 @@ const Register = () => {
                     <div className="flex flex-col space-y-3 w-full justify-center items-center">
                         <p>Or Continue with</p>
                         <div className="space-x-6">
-                            <button className="text-5xl"><FcGoogle /></button>
+                            <button onClick={handleGoogleLogin} className="text-5xl"><FcGoogle /></button>
                             <button className="text-5xl"><FaGithub /></button>
                         </div>
                         {/* <Link to="/registration"><p>Or<span className="underline text-green-400 ml-4">Register</span></p></Link> */}
