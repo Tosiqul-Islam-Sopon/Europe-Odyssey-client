@@ -9,7 +9,7 @@ const Register = () => {
 
     const [showPassword, setShowPassword] = useState(false);
 
-    const { createUser, setNameAndPhoto, googleSignIn } = useContext(AuthContext);
+    const { createUser, setNameAndPhoto, googleSignIn, githubSignIn } = useContext(AuthContext);
 
     const validatePassword = (password) => {
         if (password.length < 6) {
@@ -75,7 +75,27 @@ const Register = () => {
                     title: "Welcome to EuropeOdyssey",
                     text: "Login Successfully",
                     icon: "success"
-                  });
+                });
+            })
+            .catch(error => {
+                console.error(error);
+                Swal.fire({
+                    title: "OPPS!!!",
+                    text: "Something went wrong",
+                    icon: "error"
+                });
+            })
+    }
+
+    const handleGithubLogin = () => {
+        githubSignIn()
+            .then(res => {
+                console.log(res);
+                Swal.fire({
+                    title: "Welcome to EuropeOdyssey",
+                    text: "Login Successfully",
+                    icon: "success"
+                });
             })
             .catch(error => {
                 console.error(error);
@@ -136,7 +156,7 @@ const Register = () => {
                         <p>Or Continue with</p>
                         <div className="space-x-6">
                             <button onClick={handleGoogleLogin} className="text-5xl"><FcGoogle /></button>
-                            <button className="text-5xl"><FaGithub /></button>
+                            <button onClick={handleGithubLogin} className="text-5xl"><FaGithub /></button>
                         </div>
                         {/* <Link to="/registration"><p>Or<span className="underline text-green-400 ml-4">Register</span></p></Link> */}
                     </div>
