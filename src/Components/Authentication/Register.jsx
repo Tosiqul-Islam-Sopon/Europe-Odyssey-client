@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash, FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import DocumentTitle from "../../Title";
@@ -9,6 +9,8 @@ import DocumentTitle from "../../Title";
 const Register = () => {
     DocumentTitle("Registration");
     const [showPassword, setShowPassword] = useState(false);
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const { createUser, setNameAndPhoto, googleSignIn, githubSignIn } = useContext(AuthContext);
 
@@ -47,6 +49,7 @@ const Register = () => {
                                 text: "Registration Successful",
                                 icon: "success"
                             });
+                            navigate(location?.state ? location.state : "/");
                         })
                         .catch(error => {
                             console.log(error);
@@ -77,6 +80,7 @@ const Register = () => {
                     text: "Login Successfully",
                     icon: "success"
                 });
+                navigate(location?.state ? location.state : "/");
             })
             .catch(error => {
                 console.error(error);
@@ -97,6 +101,7 @@ const Register = () => {
                     text: "Login Successfully",
                     icon: "success"
                 });
+                navigate(location?.state ? location.state : "/");
             })
             .catch(error => {
                 console.error(error);

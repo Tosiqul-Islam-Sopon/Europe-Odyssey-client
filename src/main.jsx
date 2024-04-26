@@ -12,6 +12,7 @@ import Login from './Components/Authentication/Login';
 import Register from './Components/Authentication/Register';
 import AuthProvider from './Components/Providers/AuthProvider';
 import SpotDetails from './Components/SpotDetails/SpotDetails';
+import PrivateRoute from './PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/spotDetails/:id",
-        element: <SpotDetails></SpotDetails>,
+        element: <PrivateRoute><SpotDetails></SpotDetails></PrivateRoute>,
         loader: ({params}) => fetch(`http://localhost:5000/spots/${params.id}`)
       }
     ],

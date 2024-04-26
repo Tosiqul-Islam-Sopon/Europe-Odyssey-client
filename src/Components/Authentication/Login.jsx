@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash, FaGithub, } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import DocumentTitle from "../../Title";
@@ -9,6 +9,8 @@ import DocumentTitle from "../../Title";
 const Login = () => {
     DocumentTitle("Login");
     const [showPassword, setShowPassword] = useState(false);
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const { logIn, googleSignIn, githubSignIn } = useContext(AuthContext);
 
@@ -25,7 +27,7 @@ const Login = () => {
                     icon: "success"
                 });
                 console.log(result);
-                // navigate(location?.state ? location.state : "/");
+                navigate(location?.state ? location.state : "/");
             })
             .catch(error => {
                 Swal.fire({
@@ -46,6 +48,7 @@ const Login = () => {
                     text: "Login Successfully",
                     icon: "success"
                 });
+                navigate(location?.state ? location.state : "/");
             })
             .catch(error => {
                 console.error(error);
@@ -66,6 +69,7 @@ const Login = () => {
                     text: "Login Successfully",
                     icon: "success"
                 });
+                navigate(location?.state ? location.state : "/");
             })
             .catch(error => {
                 console.error(error);
@@ -120,7 +124,7 @@ const Login = () => {
                         {/* <Link to="/registration"><p>Or<span className="underline text-green-400 ml-4">Register</span></p></Link> */}
                     </div>
                     <div className="mx-auto mb-5 mt-6">
-                        <Link to="/register"><p>Don&apos;t have an account? <span className="underline text-green-400">Register</span></p></Link>
+                        <Link state={location?.state} to="/register"><p>Don&apos;t have an account? <span className="underline text-green-400">Register</span></p></Link>
                     </div>
                 </div>
             </div>
