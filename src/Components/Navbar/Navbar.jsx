@@ -1,6 +1,11 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
+
+    const { user, logOut } = useContext(AuthContext);
 
     const links = <>
         <NavLink to={"/"}><li><a>Home</a></li></NavLink>
@@ -8,6 +13,26 @@ const Navbar = () => {
         <NavLink><li><a>Add a Spot</a></li></NavLink>
         <NavLink><li><a>My List</a></li></NavLink>
     </>
+
+    const handleLogOut = () => {
+        logOut()
+            .then(res => {
+                console.log(res);
+                Swal.fire({
+                    title: "Log Out",
+                    text: "Logout Successfully",
+                    icon: "success"
+                });
+            })
+            .catch(error => {
+                console.error(error);
+                Swal.fire({
+                    title: "OPPS!!!",
+                    text: "Something went wrong",
+                    icon: "error"
+                })
+            })
+    }
 
     return (
         <div className="navbar bg-base-100">
@@ -38,7 +63,21 @@ const Navbar = () => {
                     {/* moon icon */}
                     <svg className="swap-on fill-current w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" /></svg>
                 </label>
-                <Link to={"/login"}><a className="btn">Login</a></Link>
+                {
+                    user ? <>
+                        <div className="flex items-center gap-3">
+                            <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
+                                <img className="w-12 h-12 rounded-full" src={user?.photoURL} />
+                            </div>
+                            <Link ><button onClick={handleLogOut} className="btn bg-[#cf827c] text-white hover:text-black">Log Out</button></Link>
+                        </div>
+                    </>
+                        :
+                        <>
+                            <Link to="/login"><a className="btn bg-[#cf827c] text-white hover:text-black">Register</a></Link>
+                            <Link to="/login"><a className="btn bg-[#cf827c] text-white hover:text-black">Login</a></Link>
+                        </>
+                }
             </div>
         </div>
     );
