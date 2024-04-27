@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import DocumentTitle from "../../Title";
 
 const MyList = () => {
-    DocumentTitle("My List");
+    DocumentTitle("My List")
     const loadedData = useLoaderData();
     const [spots, setSpots] = useState(loadedData);
 
@@ -45,7 +45,6 @@ const MyList = () => {
                 spots.length ? <>
                     <div className="overflow-x-auto">
                         <table className="table">
-                            {/* head */}
                             <thead>
                                 <tr>
                                     <th>S.I</th>

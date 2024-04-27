@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Fade } from 'react-awesome-reveal';
 import { Link } from 'react-router-dom';
 
 const CountryCard = ({ country }) => {
@@ -6,14 +7,15 @@ const CountryCard = ({ country }) => {
     console.log(country);
     return (
         <Link to={`/countrySpots/${country_name}`}>
-            <div className="card card-compact bg-base-100 shadow-xl">
-                <figure><img src={image} alt="Country Image" /></figure>
-                <div className="card-body">
-                    <h2 className="card-title">{country_name}</h2>
-                    <p>{short_description}</p>
-                    
+            <Fade>
+                <div className="card card-compact h-[400px] bg-base-100 shadow-xl">
+                    <figure><img src={image} alt="Country Image" /></figure>
+                    <div className="card-body">
+                        <h2 className="card-title">{country_name}</h2>
+                        <p>{short_description}</p>
+                    </div>
                 </div>
-            </div>
+            </Fade>
         </Link>
     );
 };

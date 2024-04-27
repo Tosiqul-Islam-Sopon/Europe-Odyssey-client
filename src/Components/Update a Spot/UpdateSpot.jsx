@@ -3,6 +3,7 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import DocumentTitle from "../../Title";
+import { Bounce } from "react-awesome-reveal";
 
 const UpdateSpot = () => {
     DocumentTitle("Update Spot");
@@ -70,7 +71,9 @@ const UpdateSpot = () => {
             <div className="hero-content flex-col w-3/4 mx-auto">
                 <div className="card shrink-0 w-full  shadow-2xl bg-base-100">
                     <div className="mx-auto my-8 lg:text-left">
-                        <h1 className="text-3xl lg:text-5xl font-bold">Update a Spot</h1>
+                        <Bounce>
+                            <h1 className="text-3xl lg:text-5xl font-bold">Update a Spot</h1>
+                        </Bounce>
                     </div>
                     <form className="card-body" onSubmit={handleUpdate}>
                         <div className="flex justify-between gap-5">
