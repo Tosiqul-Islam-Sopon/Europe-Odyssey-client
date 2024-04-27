@@ -12,9 +12,15 @@ const AllSpots = () => {
     const handleSort = (e) => {
         const formData = e.target.value;
         console.log(formData);
-        if (formData == "Average Cost") {
+        if (formData === "Ascending Order") {
             const sortedSpots = [...spots].sort((a, b) => {
                 return a.average_cost.localeCompare(b.average_cost);
+            });
+            setSpots(sortedSpots);
+        }
+        else if (formData === "Decending Order"){
+            const sortedSpots = [...spots].sort((a, b) => {
+                return b.average_cost.localeCompare(a.average_cost);
             });
             setSpots(sortedSpots);
         }
@@ -32,11 +38,12 @@ const AllSpots = () => {
                 <form onChange={handleSort}>
                     <label className="form-control w-full max-w-xs mx-auto">
                         <div className="label mx-auto">
-                            <span className="label-text text-xl font-bold">Sort by</span>
+                            <span className="label-text text-xl font-bold">Sort by Average Cost</span>
                         </div>
                         <select name="sortBy" className="select select-bordered font-medium">
                             <option disabled selected>Pick one</option>
-                            <option >Average Cost</option>
+                            <option >Ascending Order</option>
+                            <option >Decending Order</option>
                         </select>
                     </label>
                 </form>

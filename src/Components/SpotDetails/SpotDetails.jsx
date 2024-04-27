@@ -3,8 +3,10 @@ import { FaCloudSunRain, FaEuroSign, FaLocationDot, FaUser } from "react-icons/f
 import { IoIosMan } from "react-icons/io";
 import { MdAccessTimeFilled, MdEmail } from "react-icons/md";
 import { useLoaderData } from "react-router-dom";
+import DocumentTitle from "../../Title";
 
 const SpotDetails = () => {
+    DocumentTitle("Spot Details");
     const spot = useLoaderData();
 
     const { image, tourist_spot_name, short_description, country_name, location,

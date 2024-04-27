@@ -2,8 +2,10 @@ import { useContext } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import DocumentTitle from "../../Title";
 
 const UpdateSpot = () => {
+    DocumentTitle("Update Spot");
     const spot = useLoaderData();
 
     const { user } = useContext(AuthContext);
