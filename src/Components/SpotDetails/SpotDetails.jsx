@@ -30,14 +30,16 @@ const SpotDetails = () => {
                         <p className='flex gap-1 items-center font-medium'><IoIosMan /> Total Visitor Per Year: {total_visitors_per_year}</p>
                         <p className='flex gap-1 items-center font-medium'><FaCloudSunRain /> Seasonality: {seasonality}</p>
                     </div>
-                    {
-                        user_email ? <>
-                            <p className='flex gap-1 items-center font-medium'><FaUser /> Uploader: {user_name}</p>
-                            <p className='flex gap-1 items-center font-medium'><MdEmail /> Uploader Email: {user_email}</p>
-                        </>
-                            :
-                            <></>
-                    }
+                    <div className="space-y-2 p-1">
+                        {
+                            user_email ? <>
+                                <p className='flex gap-1 items-center font-medium'><FaUser /> Uploader: {user_name}</p>
+                                <p className='flex gap-1 items-center font-medium'><MdEmail /> Uploader Email: {user_email}</p>
+                            </>
+                                :
+                                <></>
+                        }
+                    </div>
                 </div>
             </div>
         </div>

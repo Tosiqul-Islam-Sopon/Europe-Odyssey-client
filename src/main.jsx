@@ -14,6 +14,7 @@ import AuthProvider from './Components/Providers/AuthProvider';
 import SpotDetails from './Components/SpotDetails/SpotDetails';
 import PrivateRoute from './PrivateRoute';
 import AddSpot from './Components/Add a Spot/AddSpot';
+import AllSpots from './Components/All Spots/AllSpots';
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,11 @@ const router = createBrowserRouter([
       {
         path: "/addSpot",
         element: <PrivateRoute><AddSpot></AddSpot></PrivateRoute>
+      },
+      {
+        path: "allSpots",
+        element: <AllSpots></AllSpots>,
+        loader: () => fetch("http://localhost:5000/allSpots")
       }
     ],
   },

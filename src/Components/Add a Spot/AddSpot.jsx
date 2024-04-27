@@ -6,7 +6,7 @@ import { AuthContext } from "../Providers/AuthProvider";
 
 const AddSpot = () => {
     DocumentTitle("Add a Spot");
-    const {user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
 
     const navigate = useNavigate();
 
@@ -22,11 +22,13 @@ const AddSpot = () => {
         const total_visitors_per_year = form.visitor.value;
         const short_description = form.description.value;
         const image = form.url.value;
-        const user_name = user.displayName? user.displayName:null;
-        const user_email = user.email? user.email:null;
+        const user_name = user.displayName ? user.displayName : null;
+        const user_email = user.email ? user.email : null;
 
-        const spot = { tourist_spot_name, country_name, location, average_cost, seasonality,
-             travel_time, total_visitors_per_year, short_description, image, user_email, user_name };
+        const spot = {
+            tourist_spot_name, country_name, location, average_cost, seasonality,
+            travel_time, total_visitors_per_year, short_description, image, user_email, user_name
+        };
         console.log(spot);
 
         fetch('http://localhost:5000/addSpot', {
@@ -67,12 +69,26 @@ const AddSpot = () => {
                                 </label>
                                 <input type="name" placeholder="Eiffel Tower" name="name" className="input input-bordered" required />
                             </div>
-                            <div className="form-control w-full">
+                            {/* <div className="form-control w-full">
                                 <label className="label">
                                     <span className="label-text">Country Name</span>
                                 </label>
                                 <input type="name" placeholder="France" name="country" className="input input-bordered" required />
-                            </div>
+                            </div> */}
+                            <label className="form-control w-full max-w-xs">
+                                <div className="label">
+                                    <span className="label-text">Select Country Name</span>
+                                </div>
+                                <select className="select select-bordered" name="country" required>
+                                    <option disabled selected>Country Name</option>
+                                    <option>France</option>
+                                    <option>Italy</option>
+                                    <option>Spain</option>
+                                    <option>England</option>
+                                    <option>Netherlands</option>
+                                    <option>Switzerland</option>
+                                </select>
+                            </label>
                         </div>
                         <div className="flex justify-between gap-5">
                             <div className="form-control w-full">
