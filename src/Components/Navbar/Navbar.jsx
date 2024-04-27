@@ -11,7 +11,7 @@ const Navbar = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to={"/allSpots"} >All Spots</NavLink></li>
         <li><NavLink to={"/addSpot"} >Add a Spot</NavLink></li>
-        <li><NavLink to={`/myList/${user.email}`}>My List</NavLink></li>
+        <li><NavLink to={`/myList/${user?.email}`}>My List</NavLink></li>
     </>
 
     const handleLogOut = () => {
