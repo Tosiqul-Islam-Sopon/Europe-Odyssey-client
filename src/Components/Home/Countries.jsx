@@ -20,9 +20,9 @@ const Countries = () => {
     return (
         <div className='space-y-5'>
             <Fade>
-                <div className="mx-auto text-center w-2/3 space-y-4">
+                <div className="mx-auto text-center lg:w-2/3 p-2 space-y-4">
                     <Bounce>
-                        <h1 className="text-4xl font-bold">
+                        <h1 className="lg:text-4xl text-3xl font-bold">
                             <Typewriter
                                 words={['Countries']}
                                 typeSpeed={100}
@@ -32,7 +32,7 @@ const Countries = () => {
                     <p>Explore our curated collection of destinations from around the world in our &quot;Countries&quot; section. Discover fascinating information, stunning images, and brief descriptions of six iconic countries, each offering a unique travel experience.</p>
                 </div>
             </Fade>
-            <div className='grid grid-cols-3 gap-2'>
+            <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2'>
                 {
                     countries.map(country => <CountryCard key={country._id} country={country}></CountryCard>)
                 }

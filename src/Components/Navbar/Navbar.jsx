@@ -27,13 +27,6 @@ const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext);
 
-    const links = <>
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to={"/allSpots"} >All Spots</NavLink></li>
-        <li><NavLink to={"/addSpot"} >Add a Spot</NavLink></li>
-        <li><NavLink to={`/myList/${user?.email}`}>My List</NavLink></li>
-    </>
-
     const handleLogOut = () => {
         logOut()
             .then(res => {
@@ -54,6 +47,30 @@ const Navbar = () => {
             })
     }
 
+    const links = <>
+        <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to={"/allSpots"} >All Spots</NavLink></li>
+        <li><NavLink to={"/addSpot"} >Add a Spot</NavLink></li>
+        <li><NavLink to={`/myList/${user?.email}`}>My List</NavLink></li>
+    </>
+    const linksSm = <>
+        <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to={"/allSpots"} >All Spots</NavLink></li>
+        <li><NavLink to={"/addSpot"} >Add a Spot</NavLink></li>
+        <li><NavLink to={`/myList/${user?.email}`}>My List</NavLink></li>
+        {
+            user ? <>
+                <li><Link ><button onClick={handleLogOut} className="">Log Out</button></Link></li>
+            </>
+                :
+                <>
+                    <li><Link to="/register"><a className="">Register</a></Link></li>
+                    <li><Link to="/login"><a className="">Login</a></Link></li>
+                </>
+        }
+    </>
+
+
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -62,7 +79,7 @@ const Navbar = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </div>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                        {links}
+                        {linksSm}
                     </ul>
                 </div>
                 <a className="btn btn-ghost text-xl">EuropeOdyssey</a>
@@ -77,7 +94,7 @@ const Navbar = () => {
                     {/* this hidden checkbox controls the state */}
                     <input
                         onChange={handleToggle}
-                        checked = {theme === "light"? false:true}
+                        checked={theme === "light" ? false : true}
                         type="checkbox"
                         className="theme-controller"
                         value="synthwave"
@@ -95,13 +112,15 @@ const Navbar = () => {
                             <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
                                 <img className="w-12 h-12 rounded-full" src={user?.photoURL} />
                             </div>
-                            <Link ><button onClick={handleLogOut} className="btn bg-[#cf827c] text-white hover:text-black">Log Out</button></Link>
+                            <Link ><button onClick={handleLogOut} className="btn bg-[#cf827c] text-white hover:text-black hidden lg:flex">Log Out</button></Link>
                         </div>
                     </>
                         :
                         <>
-                            <Link to="/register"><a className="btn bg-[#cf827c] text-white hover:text-black">Register</a></Link>
-                            <Link to="/login"><a className="btn bg-[#cf827c] text-white hover:text-black">Login</a></Link>
+                            <div className="hidden lg:flex gap-2">
+                                <Link to="/register"><a className="btn bg-[#cf827c] text-white hover:text-black">Register</a></Link>
+                                <Link to="/login"><a className="btn bg-[#cf827c] text-white hover:text-black">Login</a></Link>
+                            </div>
                         </>
                 }
             </div>

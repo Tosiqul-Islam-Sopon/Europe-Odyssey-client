@@ -17,7 +17,7 @@ const Banner = () => {
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide4" className="btn btn-circle">❮</a>
                         <Bounce>
-                            <h1 className="text-6xl font-bold text-white">
+                            <h1 className="text-3xl lg:text-6xl font-extrabold text-white">
                                 <Typewriter
                                     words={['FRANCE']}
                                     typeSpeed={100}
@@ -31,12 +31,14 @@ const Banner = () => {
                     <img src={Spain} className="w-full" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide1" className="btn btn-circle">❮</a>
-                        <h1 className="text-6xl font-bold text-white">
-                            <Typewriter
-                                words={['SPAIN']}
-                                typeSpeed={100}
-                            />
-                        </h1>
+                        <Bounce>
+                            <h1 className="text-3xl lg:text-6xl font-extrabold text-white">
+                                <Typewriter
+                                    words={['SPAIN']}
+                                    typeSpeed={100}
+                                />
+                            </h1>
+                        </Bounce>
                         <a href="#slide3" className="btn btn-circle">❯</a>
                     </div>
                 </div>
@@ -44,12 +46,14 @@ const Banner = () => {
                     <img src={Netherlands} className="w-full" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide2" className="btn btn-circle">❮</a>
-                        <h1 className="text-6xl font-bold text-white">
-                            <Typewriter
-                                words={['NETHERLANDS']}
-                                typeSpeed={100}
-                            />
-                        </h1>
+                        <Bounce>
+                            <h1 className="text-3xl lg:text-6xl font-extrabold text-white">
+                                <Typewriter
+                                    words={['NETHERLANDS']}
+                                    typeSpeed={100}
+                                />
+                            </h1>
+                        </Bounce>
                         <a href="#slide4" className="btn btn-circle">❯</a>
                     </div>
                 </div>
@@ -57,12 +61,14 @@ const Banner = () => {
                     <img src={England} className="w-full" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide3" className="btn btn-circle">❮</a>
-                        <h1 className="text-6xl font-bold text-white">
-                            <Typewriter
-                                words={['ENGLAND']}
-                                typeSpeed={100}
-                            />
-                        </h1>
+                        <Bounce>
+                            <h1 className="text-3xl lg:text-6xl font-extrabold text-white">
+                                <Typewriter
+                                    words={['ENGLAND']}
+                                    typeSpeed={100}
+                                />
+                            </h1>
+                        </Bounce>
                         <a href="#slide5" className="btn btn-circle">❯</a>
                     </div>
                 </div>
@@ -70,12 +76,14 @@ const Banner = () => {
                     <img src={Switzerland} className="w-full" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide4" className="btn btn-circle">❮</a>
-                        <h1 className="text-6xl font-bold text-white">
-                            <Typewriter
-                                words={['SWITZERLAND']}
-                                typeSpeed={100}
-                            />
-                        </h1>
+                        <Bounce>
+                            <h1 className="text-3xl lg:text-6xl font-bold text-white">
+                                <Typewriter
+                                    words={['SWITZERLAND']}
+                                    typeSpeed={100}
+                                />
+                            </h1>
+                        </Bounce>
                         <a href="#slide6" className="btn btn-circle">❯</a>
                     </div>
                 </div>
@@ -83,12 +91,14 @@ const Banner = () => {
                     <img src={Italy} className="w-full" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide5" className="btn btn-circle">❮</a>
-                        <h1 className="text-6xl font-bold text-white">
-                            <Typewriter
-                                words={['ITALY']}
-                                typeSpeed={100}
-                            />
-                        </h1>
+                        <Bounce>
+                            <h1 className="text-3xl lg:text-6xl font-extrabold text-white">
+                                <Typewriter
+                                    words={['ITALY']}
+                                    typeSpeed={100}
+                                />
+                            </h1>
+                        </Bounce>
                         <a href="#slide1" className="btn btn-circle">❯</a>
                     </div>
                 </div>

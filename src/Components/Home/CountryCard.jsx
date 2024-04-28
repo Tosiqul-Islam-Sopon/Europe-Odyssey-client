@@ -11,7 +11,7 @@ const CountryCard = ({ country }) => {
                 <div className="card card-compact h-[400px] bg-base-100 shadow-xl">
                     <figure><img src={image} alt="Country Image" /></figure>
                     <div className="card-body">
-                        <h2 className="card-title">{country_name}</h2>
+                        <h2 className="card-title text-3xl font-bold">{country_name}</h2>
                         <p>{short_description}</p>
                     </div>
                 </div>
