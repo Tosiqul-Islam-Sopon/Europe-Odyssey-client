@@ -35,7 +35,7 @@ const UpdateSpot = () => {
         };
         console.log(updatedSpot);
 
-        fetch(`http://localhost:5000/updateSpot/${_id}`, {
+        fetch(`https://europe-odyssey-server.vercel.app/updateSpot/${_id}`, {
             method: "PATCH",
             headers: {
                 'content-type': 'application/json'

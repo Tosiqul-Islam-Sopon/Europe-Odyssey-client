@@ -33,7 +33,7 @@ const AddSpot = () => {
         };
         console.log(spot);
 
-        fetch('http://localhost:5000/addSpot', {
+        fetch('https://europe-odyssey-server.vercel.app/addSpot', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -45,10 +45,12 @@ const AddSpot = () => {
                 console.log(data);
                 if (data.insertedId) {
                     Swal.fire({
-                        title: "Cool",
-                        text: "Spot Added Successfully",
-                        icon: "success"
-                    });
+                        position: "top-end",
+                        icon: "success",
+                        title: "Your work has been saved",
+                        showConfirmButton: false,
+                        timer: 1500
+                      });
                     form.reset();
                     navigate("/");
                 }

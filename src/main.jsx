@@ -32,7 +32,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/spots")
+        loader: () => fetch("https://europe-odyssey-server.vercel.app/spots")
       },
       {
         path: "/login",
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
       {
         path: "/spotDetails/:id",
         element: <PrivateRoute><SpotDetails></SpotDetails></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/spots/${params.id}`)
+        loader: ({params}) => fetch(`https://europe-odyssey-server.vercel.app/spots/${params.id}`)
       },
       {
         path: "/addSpot",
@@ -54,26 +54,26 @@ const router = createBrowserRouter([
       {
         path: "allSpots",
         element: <AllSpots></AllSpots>,
-        loader: () => fetch("http://localhost:5000/allSpots")
+        loader: () => fetch("https://europe-odyssey-server.vercel.app/allSpots")
       },
       {
         path: "/myList/:email",
         element: <PrivateRoute><MyList></MyList></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/allSpots/${params.email}`)
+        loader: ({params}) => fetch(`https://europe-odyssey-server.vercel.app/allSpots/${params.email}`)
       },
       {
         path: "/updateSpot/:id",
         element: <PrivateRoute><UpdateSpot></UpdateSpot></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/spots/${params.id}`)
+        loader: ({params}) => fetch(`https://europe-odyssey-server.vercel.app/spots/${params.id}`)
       },
       {
         path: "/countrySpots/:country",
         element: <CountrySpots></CountrySpots>,
-        loader: ({params}) => fetch(`http://localhost:5000/countrySpots/${params.country}`)
+        loader: ({params}) => fetch(`https://europe-odyssey-server.vercel.app/countrySpots/${params.country}`)
       },
       {
         path: "/profile",
-        element: <Profile></Profile>
+        element: <PrivateRoute><Profile></Profile></PrivateRoute>
       },
       {
         path: "/weatherWidget",
