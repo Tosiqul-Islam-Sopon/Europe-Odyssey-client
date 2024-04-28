@@ -19,6 +19,9 @@ import MyList from './Components/My List/MyList';
 import UpdateSpot from './Components/Update a Spot/UpdateSpot';
 import CountrySpots from './Components/Country Spots/CountrySpots';
 import Profile from './Components/Profile/Profile';
+import WeatherWidget from './Components/Weather Widget/WeatherWidget';
+
+
 
 const router = createBrowserRouter([
   {
@@ -71,6 +74,10 @@ const router = createBrowserRouter([
       {
         path: "/profile",
         element: <Profile></Profile>
+      },
+      {
+        path: "/weatherWidget",
+        element: <WeatherWidget></WeatherWidget>
       }
       
     ],
