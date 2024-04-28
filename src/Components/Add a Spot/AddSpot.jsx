@@ -58,7 +58,7 @@ const AddSpot = () => {
 
     return (
         <div className="min-h-screen bg-base-200">
-            <div className="hero-content flex-col w-3/4 mx-auto">
+            <div className="hero-content flex-col lg:w-3/4 mx-auto">
                 <div className="card shrink-0 w-full  shadow-2xl bg-base-100">
                     <Bounce>
                         <h1 className="text-4xl font-bold text-center mt-5">
@@ -70,7 +70,7 @@ const AddSpot = () => {
                     </Bounce>
                     <form className="card-body" onSubmit={handleAddSpot}>
                         <Fade>
-                            <div className="flex justify-between gap-5">
+                            <div className="flex flex-col lg:flex-row justify-between gap-5">
                                 <div className="form-control w-full">
                                     <label className="label">
                                         <span className="label-text">Spot Name</span>
@@ -94,7 +94,7 @@ const AddSpot = () => {
                             </div>
                         </Fade>
                         <Fade>
-                            <div className="flex justify-between gap-5">
+                            <div className="flex flex-col lg:flex-row justify-between gap-5">
                                 <div className="form-control w-full">
                                     <label className="label">
                                         <span className="label-text">Location</span>
@@ -110,7 +110,7 @@ const AddSpot = () => {
                             </div>
                         </Fade>
                         <Fade>
-                            <div className="flex justify-between gap-5">
+                            <div className="flex flex-col lg:flex-row justify-between gap-5">
                                 <div className="form-control w-full">
                                     <label className="label">
                                         <span className="label-text">Average Cost</span>
@@ -126,7 +126,7 @@ const AddSpot = () => {
                             </div>
                         </Fade>
                         <Fade>
-                            <div className="flex justify-between gap-5">
+                            <div className="flex flex-col lg:flex-row justify-between gap-5">
                                 <div className="form-control w-full">
                                     <label className="label">
                                         <span className="label-text">Travel Time</span>

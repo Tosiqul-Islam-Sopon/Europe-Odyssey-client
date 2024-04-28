@@ -86,7 +86,7 @@ const Login = () => {
         <Fade>
             <div className="w-full  bg-base-200 mx-auto">
                 <div className="hero-content flex-col gap-5 ">
-                    <div className="card shrink-0 w-1/2 shadow-2xl rounded-2xl bg-base-100">
+                    <div className="card shrink-0 lg:w-1/2 shadow-2xl rounded-2xl bg-base-100">
                         <div className="mx-auto my-8 lg:text-left">
                             <Bounce>
                                 <h1 className="text-3xl lg:text-5xl font-bold">Login</h1>

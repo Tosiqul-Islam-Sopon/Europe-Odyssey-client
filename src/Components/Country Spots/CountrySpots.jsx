@@ -11,7 +11,7 @@ const CountrySpots = () => {
                 <h1 className="text-4xl font-bold text-center">{country.country} Spots</h1>
             </Bounce>
             <Fade>
-                <div className='grid grid-cols-3 gap-2'>
+                <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2'>
                     {
                         spots.map(spot => <SpotCard key={spot._id} spot={spot}></SpotCard>)
                     }

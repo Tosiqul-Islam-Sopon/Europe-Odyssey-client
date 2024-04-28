@@ -8,7 +8,7 @@ export default function ErrorPage() {
     console.error(error);
 
     return (
-        <div id="error-page" className="mx-auto w-fit text-center mt-40 space-y-4">
+        <div id="error-page" className="mx-auto w-fit text-center mt-20 space-y-4">
             <h1 className="text-5xl text-red-700">Oops!</h1>
             <p className="text-2xl">Sorry, an unexpected error has occurred.</p>
             <p className="text-xl text-red-500">

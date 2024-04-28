@@ -3,7 +3,7 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import DocumentTitle from "../../Title";
-import { Bounce } from "react-awesome-reveal";
+import { Bounce, Fade } from "react-awesome-reveal";
 
 const UpdateSpot = () => {
     DocumentTitle("Update Spot");
@@ -68,7 +68,7 @@ const UpdateSpot = () => {
     }
     return (
         <div className="min-h-screen bg-base-200">
-            <div className="hero-content flex-col w-3/4 mx-auto">
+            <div className="hero-content flex-col lg:w-3/4 mx-auto">
                 <div className="card shrink-0 w-full  shadow-2xl bg-base-100">
                     <div className="mx-auto my-8 lg:text-left">
                         <Bounce>
@@ -76,81 +76,92 @@ const UpdateSpot = () => {
                         </Bounce>
                     </div>
                     <form className="card-body" onSubmit={handleUpdate}>
-                        <div className="flex justify-between gap-5">
-                            <div className="form-control w-full">
-                                <label className="label">
-                                    <span className="label-text">Spot Name</span>
-                                </label>
-                                <input type="name" defaultValue={tourist_spot_name} placeholder="Eiffel Tower" name="name" className="input input-bordered" required />
-                            </div>
-
-                            <label className="form-control w-full">
-                                <div className="label">
-                                    <span className="label-text">Select Country Name</span>
+                        <Fade>
+                            <div className="flex flex-col lg:flex-row justify-between gap-5">
+                                <div className="form-control w-full">
+                                    <label className="label">
+                                        <span className="label-text">Spot Name</span>
+                                    </label>
+                                    <input type="name" defaultValue={tourist_spot_name} placeholder="Eiffel Tower" name="name" className="input input-bordered" required />
                                 </div>
-                                <select defaultValue={country_name} className="select select-bordered" name="country" required>
-                                    <option disabled selected>Country Name</option>
-                                    <option>France</option>
-                                    <option>Italy</option>
-                                    <option>Spain</option>
-                                    <option>England</option>
-                                    <option>Netherlands</option>
-                                    <option>Switzerland</option>
-                                </select>
-                            </label>
-                        </div>
-                        <div className="flex justify-between gap-5">
-                            <div className="form-control w-full">
-                                <label className="label">
-                                    <span className="label-text">Location</span>
-                                </label>
-                                <input type="name" defaultValue={location} placeholder="Paris" name="location" className="input input-bordered" required />
-                            </div>
-                            <div className="form-control w-full">
-                                <label className="label">
-                                    <span className="label-text">Photo URL</span>
-                                </label>
-                                <input type="name" defaultValue={image} placeholder="https://Eiffel-Tower.jpg" name="url" className="input input-bordered" required />
-                            </div>
-                        </div>
-                        <div className="flex justify-between gap-5">
-                            <div className="form-control w-full">
-                                <label className="label">
-                                    <span className="label-text">Average Cost</span>
-                                </label>
-                                <input type="name" defaultValue={average_cost} placeholder="€20" name="cost" className="input input-bordered" required />
-                            </div>
-                            <div className="form-control w-full">
-                                <label className="label">
-                                    <span className="label-text">Seasonality</span>
-                                </label>
-                                <input type="name" defaultValue={seasonality} placeholder="Summer/ April-May" name="seasonality" className="input input-bordered" required />
-                            </div>
-                        </div>
-                        <div className="flex justify-between gap-5">
-                            <div className="form-control w-full">
-                                <label className="label">
-                                    <span className="label-text">Travel Time</span>
-                                </label>
-                                <input type="name" defaultValue={travel_time} placeholder="5 days" name="tavel_time" className="input input-bordered" required />
-                            </div>
-                            <div className="form-control w-full">
-                                <label className="label">
-                                    <span className="label-text">Total Visitor Per Year</span>
-                                </label>
-                                <input type="name" defaultValue={total_visitors_per_year} placeholder="350000" name="visitor" className="input input-bordered" required />
-                            </div>
-                        </div>
-                        <label className="form-control">
-                            <div className="label">
-                                <span className="label-text">Short Description</span>
-                            </div>
-                            <textarea className="textarea textarea-bordered h-24" defaultValue={short_description} name="description" placeholder="The Eiffel Tower is a wrought-iron lattice tower"></textarea>
-                        </label>
 
-                        <div className="form-control mt-6">
-                            <button className="btn btn-primary">Update</button>
-                        </div>
+                                <label className="form-control w-full">
+                                    <div className="label">
+                                        <span className="label-text">Select Country Name</span>
+                                    </div>
+                                    <select defaultValue={country_name} className="select select-bordered" name="country" required>
+                                        <option disabled selected>Country Name</option>
+                                        <option>France</option>
+                                        <option>Italy</option>
+                                        <option>Spain</option>
+                                        <option>England</option>
+                                        <option>Netherlands</option>
+                                        <option>Switzerland</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </Fade>
+                        <Fade>
+                            <div className="flex flex-col lg:flex-row justify-between gap-5">
+                                <div className="form-control w-full">
+                                    <label className="label">
+                                        <span className="label-text">Location</span>
+                                    </label>
+                                    <input type="name" defaultValue={location} placeholder="Paris" name="location" className="input input-bordered" required />
+                                </div>
+                                <div className="form-control w-full">
+                                    <label className="label">
+                                        <span className="label-text">Photo URL</span>
+                                    </label>
+                                    <input type="name" defaultValue={image} placeholder="https://Eiffel-Tower.jpg" name="url" className="input input-bordered" required />
+                                </div>
+                            </div>
+                        </Fade>
+                        <Fade>
+                            <div className="flex flex-col lg:flex-row justify-between gap-5">
+                                <div className="form-control w-full">
+                                    <label className="label">
+                                        <span className="label-text">Average Cost</span>
+                                    </label>
+                                    <input type="name" defaultValue={average_cost} placeholder="€20" name="cost" className="input input-bordered" required />
+                                </div>
+                                <div className="form-control w-full">
+                                    <label className="label">
+                                        <span className="label-text">Seasonality</span>
+                                    </label>
+                                    <input type="name" defaultValue={seasonality} placeholder="Summer/ April-May" name="seasonality" className="input input-bordered" required />
+                                </div>
+                            </div>
+                        </Fade>
+                        <Fade>
+                            <div className="flex flex-col lg:flex-row justify-between gap-5">
+                                <div className="form-control w-full">
+                                    <label className="label">
+                                        <span className="label-text">Travel Time</span>
+                                    </label>
+                                    <input type="name" defaultValue={travel_time} placeholder="5 days" name="tavel_time" className="input input-bordered" required />
+                                </div>
+                                <div className="form-control w-full">
+                                    <label className="label">
+                                        <span className="label-text">Total Visitor Per Year</span>
+                                    </label>
+                                    <input type="name" defaultValue={total_visitors_per_year} placeholder="350000" name="visitor" className="input input-bordered" required />
+                                </div>
+                            </div>
+                        </Fade>
+                        <Fade>
+                            <label className="form-control">
+                                <div className="label">
+                                    <span className="label-text">Short Description</span>
+                                </div>
+                                <textarea className="textarea textarea-bordered h-24" defaultValue={short_description} name="description" placeholder="The Eiffel Tower is a wrought-iron lattice tower"></textarea>
+                            </label>
+                        </Fade>
+                        <Fade>
+                            <div className="form-control mt-6">
+                                <button className="btn btn-primary">Update</button>
+                            </div>
+                        </Fade>
                     </form>
                 </div>
             </div>

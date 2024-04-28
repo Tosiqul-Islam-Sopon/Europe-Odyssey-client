@@ -117,7 +117,7 @@ const Register = () => {
         <Fade>
             <div className="w-full  bg-base-200 mx-auto">
                 <div className="hero-content flex-col gap-5 ">
-                    <div className="card shrink-0 w-1/2 shadow-2xl rounded-2xl bg-base-100">
+                    <div className="card shrink-0 lg:w-1/2 shadow-2xl rounded-2xl bg-base-100">
                         <Bounce>
                             <div className="mx-auto my-8 lg:text-left text-center">
                                 <h1 className="text-3xl lg:text-5xl text-center font-bold">Register</h1>

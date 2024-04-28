@@ -29,7 +29,7 @@ const AllSpots = () => {
     return (
         <div className="mt-10 space-y-8">
             <Fade>
-                <div className="mx-auto text-center w-2/3 space-y-3">
+                <div className="mx-auto text-center lg:w-2/3 p-2 space-y-3">
                     <Bounce>
                         <h1 className="text-4xl font-bold">
                             <Typewriter
@@ -54,7 +54,7 @@ const AllSpots = () => {
                 </div>
             </Fade>
             <Fade>
-                <div className="grid grid-cols-3 gap-2">
+                <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2">
                     {
                         spots.map(spot => <SpotCard key={spot._id} spot={spot}></SpotCard>)
                     }
