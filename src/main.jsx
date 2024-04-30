@@ -18,8 +18,6 @@ import AllSpots from './Components/All Spots/AllSpots';
 import MyList from './Components/My List/MyList';
 import UpdateSpot from './Components/Update a Spot/UpdateSpot';
 import CountrySpots from './Components/Country Spots/CountrySpots';
-import Profile from './Components/Profile/Profile';
-import WeatherWidget from './Components/Weather Widget/WeatherWidget';
 
 
 
@@ -70,14 +68,6 @@ const router = createBrowserRouter([
         path: "/countrySpots/:country",
         element: <CountrySpots></CountrySpots>,
         loader: ({params}) => fetch(`https://europe-odyssey-server.vercel.app/countrySpots/${params.country}`)
-      },
-      {
-        path: "/profile",
-        element: <PrivateRoute><Profile></Profile></PrivateRoute>
-      },
-      {
-        path: "/weatherWidget",
-        element: <WeatherWidget></WeatherWidget>
       }
       
     ],

@@ -5,6 +5,8 @@ import TouristSpots from "./TouristSpots";
 import Countries from "./Countries";
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
+import WeatherWidget from "../Weather Widget/WeatherWidget";
+import TravelTips from "../Travel Tips/TravelTips";
 
 const Home = () => {
     DocumentTitle("EuropeOdyssey");
@@ -29,6 +31,8 @@ const Home = () => {
             <Banner></Banner>
             <TouristSpots spots={spots}></TouristSpots>
             <Countries></Countries>
+            <WeatherWidget></WeatherWidget>
+            <TravelTips></TravelTips>
         </div>
     );
 };

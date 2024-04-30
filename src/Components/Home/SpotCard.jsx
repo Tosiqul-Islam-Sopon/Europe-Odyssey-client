@@ -15,7 +15,7 @@ const SpotCard = ({ spot }) => {
                     <div className='space-y-4'>
                         <h2 className="text-2xl font-bold">{tourist_spot_name}</h2>
 
-                        <div className='flex flex-col lg:flex-row gap-2 justify-between border-y-2 py-3'>
+                        <div className='flex flex-col lg:flex-row space-y-2 justify-between border-y-2 py-3'>
                             <p className='flex  items-center font-medium'><MdAccessTimeFilled /> Travel Time: {travel_time}</p>
                             <p className='flex  items-center font-medium'><FaEuroSign></FaEuroSign> Average Cost: {average_cost}</p>
                         </div>

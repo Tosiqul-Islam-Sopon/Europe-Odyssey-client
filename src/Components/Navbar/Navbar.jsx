@@ -52,16 +52,12 @@ const Navbar = () => {
         <li><NavLink to={"/allSpots"} >All Spots</NavLink></li>
         <li><NavLink to={"/addSpot"} >Add a Spot</NavLink></li>
         <li><NavLink to={`/myList/${user?.email}`}>My List</NavLink></li>
-        <li><NavLink to={"/profile"} >Profile</NavLink></li>
-        <li><NavLink to={"/weatherWidget"} >Weather Widget</NavLink></li>
     </>
     const linksSm = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to={"/allSpots"} >All Spots</NavLink></li>
         <li><NavLink to={"/addSpot"} >Add a Spot</NavLink></li>
         <li><NavLink to={`/myList/${user?.email}`}>My List</NavLink></li>
-        <li><NavLink to={"/profile"} >Profile</NavLink></li>
-        <li><NavLink to={"/weatherWidget"} >Weather Widget</NavLink></li>
         {
             user ? <>
                 <li><Link ><button onClick={handleLogOut} className="">Log Out</button></Link></li>
@@ -73,7 +69,6 @@ const Navbar = () => {
                 </>
         }
     </>
-
 
     return (
         <div className="navbar bg-base-100 px-0">
