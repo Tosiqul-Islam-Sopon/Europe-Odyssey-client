@@ -15,13 +15,13 @@ const AllSpots = () => {
         console.log(formData);
         if (formData === "Ascending Order") {
             const sortedSpots = [...spots].sort((a, b) => {
-                return a.average_cost.localeCompare(b.average_cost);
+                return parseInt(a.average_cost).localeCompare(parseInt(b.average_cost));
             });
             setSpots(sortedSpots);
         }
         else if (formData === "Decending Order") {
             const sortedSpots = [...spots].sort((a, b) => {
-                return b.average_cost.localeCompare(a.average_cost);
+                return parseInt(b.average_cost).localeCompare(parseInt(a.average_cost));
             });
             setSpots(sortedSpots);
         }
