@@ -76,6 +76,7 @@ const Register = () => {
         googleSignIn()
             .then(res => {
                 console.log(res);
+                
                 Swal.fire({
                     title: "Welcome to EuropeOdyssey",
                     text: "Login Successfully",
